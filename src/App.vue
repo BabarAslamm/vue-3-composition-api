@@ -1,9 +1,23 @@
 <script>
 
+    export default {
+        setup () {
+
+            const message = 'Hello From Vue 3 !';
+
+
+            return {
+                message
+            }
+        }
+
+
+    }
+
 </script>
 
 <template>
-    Hello Composition Api Vue 3
+    {{ message }}
 </template>
 
 
