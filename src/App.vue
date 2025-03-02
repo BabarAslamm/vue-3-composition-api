@@ -20,17 +20,17 @@
                 item.name = "Product 2",
                 item.price = "50"
 
-                console.log('toRefName', toRefName.value)
+                //console.log('toRefName', toRefName.value)
             }
 
             // toRef
-            const toRefName = toRef(item, 'name');
+            //const toRefName = toRef(item, 'name');
 
-            console.log('toRefName', toRefName.value)
+            //console.log('toRefName', toRefName.value)
 
-            item.name = 'Product 3';
+            //item.name = 'Product 3';
 
-            console.log('toRefName', toRefName.value)
+            //console.log('toRefName', toRefName.value)
             // End toRef
 
 
