@@ -33,6 +33,15 @@
             //console.log('toRefName', toRefName.value)
             // End toRef
 
+            // toRefs Logic
+            const toRefsItem = toRefs(item);
+
+            console.log('toRefsItem Name', toRefsItem.name.value)
+            console.log('toRefsItem Price', toRefsItem.price.value)
+
+            // toRefs Real Use
+            const { name , price } = toRefs(item);
+
 
             return {
                 message,
@@ -41,6 +50,8 @@
                 decrement,
                 item,
                 swapProduct,
+                name,
+                price
             }
         }
 
@@ -62,7 +73,7 @@
 
     <!-- Reactive -->
      <hr>
-     <p>{{ item.name}} : {{ item.price }}</p>
+     <p>{{ name}} : {{ price }}</p>
      <button @click="swapProduct">Swap Product</button>
 </template>
 
