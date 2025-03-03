@@ -5,20 +5,21 @@
         setup () {
 
             const message = ref('Hello From Vue 3 !');
-            const quantity = ref('1');
 
-            const increment = () => quantity.value ++;
-            const decrement = () => quantity.value --;
+            const increment = () => item.quantity ++;
+            const decrement = () => item.quantity --;
 
             // Reactive object
             const item = reactive({
                 name : 'Product 1',
-                price : 100
+                price : 100,
+                quantity : 1
             });
 
             const swapProduct = () => {
                 item.name = "Product 2",
                 item.price = "50"
+                item.quantity = 10
 
                 //console.log('toRefName', toRefName.value)
             }
@@ -40,11 +41,11 @@
             console.log('toRefsItem Price', toRefsItem.price.value)
 
             // toRefs Real Use
-            const { name , price } = toRefs(item);
+            const { name , price, quantity } = toRefs(item);
 
 
             // Total # computed property
-            const total = computed( () => item.price * quantity.value);
+            const total = computed( () => item.price * item.quantity);
 
 
             return {
