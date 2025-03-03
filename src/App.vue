@@ -1,5 +1,5 @@
 <script>
-    import { ref, reactive, toRef, toRefs } from 'vue';
+    import { ref, reactive, toRef, toRefs, computed } from 'vue';
 
     export default {
         setup () {
@@ -43,6 +43,10 @@
             const { name , price } = toRefs(item);
 
 
+            // Total # computed property
+            const total = computed( () => item.price * quantity.value);
+
+
             return {
                 message,
                 quantity,
@@ -51,7 +55,8 @@
                 item,
                 swapProduct,
                 name,
-                price
+                price,
+                total
             }
         }
 
@@ -71,10 +76,22 @@
     <button @click="increment"> + </button>
     <button @click="decrement"> - </button>
 
+    <!-- Increase Decrease Price  -->
+    <hr>
+    <b>Price</b> : {{ price }}
+    <br>
+    <button @click="price++"> + </button>
+    <button @click="price--"> - </button>
+
     <!-- Reactive -->
      <hr>
      <p>{{ name}} : {{ price }}</p>
      <button @click="swapProduct">Swap Product</button>
+
+     <!-- Total  -->
+      <hr>
+      <p>Computed Property</p>
+      <b>Total :</b> {{ total }}
 </template>
 
 
